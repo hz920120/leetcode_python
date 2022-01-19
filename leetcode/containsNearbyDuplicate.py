@@ -5,14 +5,17 @@ class Solution(object):
         :type k: int
         :rtype: bool
         """
-        for l in range(len(nums)):
-            temp = nums[l]
-            for ele in nums[l + 1:l + k + 1]:
-                if temp == ele:
-                    return True
-
+        if k == 0:
+            return False
+        s = []
+        for index in range(len(nums)):
+            if len(s) > k:
+                s.pop()
+            if nums[index] in s:
+                return True
+            s.append(nums[index])
         return False
 
 
 s = Solution()
-print(s.containsNearbyDuplicate([1,2,3,1,2,3], 2))
+print(s.containsNearbyDuplicate([4,1,2,3,1,5], 3))
