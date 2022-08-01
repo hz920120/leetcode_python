@@ -12,7 +12,7 @@ class Solution(object):
         flag = False
         tmp = None
         res = None
-        while l1 or l2:
+        while l1 or l2 or flag:
             if not l1:
                 l1 = ListNode(val=0)
             if not l2:
@@ -30,8 +30,6 @@ class Solution(object):
                 tmp = tmp.next
             l1 = l1.next
             l2 = l2.next
-        if flag:
-            tmp.next = ListNode(val=1)
         return res
 
 
