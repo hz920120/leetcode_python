@@ -1,4 +1,4 @@
-from util.Tree import TreeNode
+from util.Util import TreeNode
 
 # Definition for a binary tree node.
 # class TreeNode(object):

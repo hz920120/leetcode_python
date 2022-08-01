@@ -1,4 +1,4 @@
-from util.Tree import TreeNode
+from util.Util import TreeNode
 
 class Solution(object):
     def levelOrder(self, root):
