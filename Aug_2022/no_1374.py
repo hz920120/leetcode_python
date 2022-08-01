@@ -4,15 +4,4 @@ class Solution(object):
         :type n: int
         :rtype: str
         """
-        if n <= 0:
-            return ''
-        even = False
-        if n % 2 == 0:
-            even = True
-        res = '' if even else 'm'
-        for i in range(n-1):
-            if i == 0:
-                res += 'x'
-            elif i != 0:
-                res += 'y'
-        return res + 'y' if even else res
+        return 'a' * n if n % 2 else 'a' * (n - 1) + 'b'
