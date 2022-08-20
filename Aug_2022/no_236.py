@@ -15,6 +15,9 @@ class Solution(object):
         :type q: TreeNode
         :rtype: TreeNode
         """
+        # 一个节点，如果找到他的左节点和右节点有给定两个点的信息，
+        # 直接返回当前节点；如果遇到其中一个节点，返回当前节点；
+        # 左右都为空或者当前节点为空，直接返回空
         def LCA(root, p, q):
             if not root or root == p or root == q:
                 return root
