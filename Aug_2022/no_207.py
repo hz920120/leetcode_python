@@ -48,23 +48,38 @@ class Solution(object):
         return len(course_list) == 0
 
 
-class Graph:
-    def __init__(self):
-        self.nodes = []
-        self.edges = []
+# class Graph:
+#     def __init__(self):
+#         self.nodes = []
+#         self.edges = []
+#
+# class Node:
+#     def __init__(self, val):
+#         self.val = val
+#         self.i = 0
+#         self.o = 0
+#         self.nexts = []
+#         self.edges = []
+#
+# class Edge:
+#     def __init__(self, from_node, to_node):
+#         self.from_node = from_node
+#         self.to_node = to_node
 
-class Node:
-    def __init__(self, val):
-        self.val = val
-        self.i = 0
-        self.o = 0
-        self.nexts = []
-        self.edges = []
 
-class Edge:
-    def __init__(self, from_node, to_node):
-        self.from_node = from_node
-        self.to_node = to_node
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 if __name__ == '__main__':

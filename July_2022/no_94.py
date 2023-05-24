@@ -20,15 +20,123 @@ class Solution(object):
         # return res
 
         # 栈解法
+        res = []
         if not root:
-            return []
-        curr, res, stack = root, [], []
-        while curr or stack:
-            while curr:
-                res.append(curr.val)
-                stack.append(curr)
-                curr = curr.right
-            tmp = stack.pop()
-            curr = tmp.left
+            return res
+        stack = []
+        while root or stack:
+            if root:
+                stack.append(root)
+                root = root.left
+            else:
+                tmp = stack.pop()
+                res.append(tmp.val)
+                if tmp.right:
+                    root = tmp.right
 
         return res
+
+    def preOrder(self, root: TreeNode):
+        res = []
+        if not root:
+            return res
+
+        stack = []
+        while stack or root:
+            while root:
+                res.append(root.val)
+                stack.append(root)
+                root = root.left
+            tmp = stack.pop()
+            root = tmp.right
+        return res
+
+    def postOrder(self, root: TreeNode):
+        res = []
+        if not root:
+            return res
+
+        stack = []
+        while stack or root:
+            while root:
+                res.append(root.val)
+                stack.append(root)
+                root = root.right
+            tmp = stack.pop()
+            root = tmp.left
+        return res[::-1]
+
+
+    def pre(self, root):
+        if not root:
+            return []
+
+        res = []
+        stack = []
+        while root or stack:
+            while root:
+                res.append(root.val)
+                stack.append(root)
+                root = root.left
+            tmp = stack.pop()
+            root = tmp.right
+        return res
+
+    def in1(self, root):
+        if not root:
+            return []
+
+        res = []
+        stack = []
+        while root or stack:
+            if root:
+                stack.append(root)
+                root = root.left
+            else:
+                tmp = stack.pop()
+                res.append(tmp.val)
+                root = tmp.right
+
+        return res
+
+
+    def post(self, root):
+        if not root:
+            return []
+
+        res, stack = [], []
+        while root or stack:
+            while root:
+                res.append(root.val)
+                stack.append(root)
+                root = root.right
+            tmp = stack.pop()
+            root = tmp.left
+
+        return res[::-1]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

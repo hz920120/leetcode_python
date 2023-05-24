@@ -28,6 +28,18 @@ class Solution(object):
                 return root
             return left if left else right
 
+        def getLCA(root, p, q):
+            if not root or root.val == p or root.val == q:
+                return root
+
+            left = getLCA(root.left, p, q)
+            right = getLCA(root.right, p, q)
+            if left and right:
+                return root
+            return left if left else right
+
+        return getLCA(root, p, q)
+
         return LCA(root, p, q)
 
 

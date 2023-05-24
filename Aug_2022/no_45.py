@@ -40,6 +40,22 @@ class Solution(object):
         f1(0)
         return list[0]
 
+    def jump1(self, nums):
+        l = len(nums)
+        if l == 1:
+            return 0
+        index = 0
+        res = 0
+        while index < l:
+            if index + nums[index] >= l-1:
+                return res + 1
+            step = nums[index+1:index + nums[index]+1]
+            for i in range(1, len(step) + 1):
+                step[i-1] += i
+            index += step.index(max(step)) + 1
+            res += 1
+        return res + 1
+
 if __name__ == '__main__':
     nums = [2,4,1,5,6,7,3]
     s = Solution()
