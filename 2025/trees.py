@@ -78,4 +78,26 @@ class Solution:
                 if node.right:
                     queue.append(node.right)
             res.append(curr_res)
-        return res
+        return
+
+    def buildTree(self, inorder: List[int], postorder: List[int]) -> Optional[TreeNode]:
+        if not inorder and not postorder:
+            return None
+
+        head_val = postorder[-1]
+        head_index = inorder.index(head_val)
+        left_in, right_in = inorder[:head_index], inorder[head_index+1:]
+        left_post, right_post = postorder[:-1][:head_index], postorder[:-1][head_index:]
+
+
+        left_node = self.buildTree(left_in, left_post)
+        right_node  = self.buildTree(right_in, right_post)
+        head = TreeNode(head_val, left_node, right_node)
+        return head
+
+
+if __name__ == '__main__':
+    inorder = [-1]
+    postorder = [-1]
+    s = Solution()
+    a = s.buildTree(inorder, postorder)
